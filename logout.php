@@ -1,5 +1,9 @@
 <?php
 session_start();
+unset($_SESSION['login']);
+unset($_SESSION['nombre']);
+unset($_SESSION['esAdmin']);
+session_destroy();
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,11 +22,11 @@ session_start();
 	include('sidebarIzq.php');
 	?>
 	
-	<main>
+	<main id = "contenido">
 		<article>
-			<h1>Página principal</h1>
-			<p> Aquí está el contenido público, visible para todos los usuarios. </p>
-		</article>
+            <h1>Sesión cerrada</h1>
+            <p>Gracias por visitar nuestra web. Hasta pronto.</p>
+        </article>
 	</main>
 
 	<?php

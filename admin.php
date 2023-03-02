@@ -19,10 +19,17 @@ session_start();
 	?>
 	
 	<main>
-		<article>
-			<h1>Página principal</h1>
-			<p> Aquí está el contenido público, visible para todos los usuarios. </p>
-		</article>
+    <article>
+        <?php
+            if (isset($_SESSION['esAdmin'])){
+                echo "<h1>Consola de administración</h1>";
+                echo "<p>Aquí estarían los controles para la administración de la web.</p>";
+            } else {
+                echo "<h1>ERROR</h1>";
+                echo "<p>Debes iniciar sesion para ver contenido</p>";
+            }
+        ?>
+    </article>
 	</main>
 
 	<?php
